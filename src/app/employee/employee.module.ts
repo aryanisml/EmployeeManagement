@@ -4,6 +4,7 @@ import { EmployeeComponent } from '../employee/employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeCreationComponent } from './employee-creation/employee-creation.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
+import { ShareModule } from '../share/share.module';
 
 
 
@@ -11,7 +12,8 @@ import { EmployeeRoutingModule } from './employee-routing.module';
   declarations: [EmployeeComponent, EmployeeDetailsComponent , EmployeeCreationComponent],
   imports: [
     CommonModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    ShareModule
   ]
 })
 export class EmployeeModule { }
