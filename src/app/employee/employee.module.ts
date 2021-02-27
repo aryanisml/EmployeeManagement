@@ -5,7 +5,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { EmployeeCreationComponent } from './employee-creation/employee-creation.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { ShareModule } from '../share/share.module';
-
+import {AgGridModule} from 'ag-grid-angular';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { ShareModule } from '../share/share.module';
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ShareModule
+    ShareModule,
+    AgGridModule.withComponents([])
   ]
 })
 export class EmployeeModule { }
