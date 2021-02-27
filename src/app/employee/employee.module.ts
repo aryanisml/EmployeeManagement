@@ -5,19 +5,24 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { EmployeeCreationComponent } from './employee-creation/employee-creation.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ShareModule } from '../share/share.module';
-import {AgGridModule} from 'ag-grid-angular';
-
+import { SharedModule } from '../share/shared.module';
+import { AgGridModule } from 'ag-grid-angular';
+import { DeleteCellRendererComponent } from './employee-details/delete/delete-cell-renderer.component';
 
 @NgModule({
-  declarations: [EmployeeComponent, EmployeeDetailsComponent , EmployeeCreationComponent],
+  declarations: [
+    EmployeeComponent,
+    EmployeeDetailsComponent,
+    EmployeeCreationComponent,
+    DeleteCellRendererComponent,
+  ],
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ShareModule,
-    AgGridModule.withComponents([]),
-    ReactiveFormsModule,
-    ShareModule
-  ]
+    SharedModule,
+    AgGridModule.withComponents([DeleteCellRendererComponent]),
+    ReactiveFormsModule
+ 
+  ],
 })
-export class EmployeeModule { }
+export class EmployeeModule {}

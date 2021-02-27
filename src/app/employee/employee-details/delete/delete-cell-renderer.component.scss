@@ -1,0 +1,12 @@
+.container {
+    display:flex;
+    align-items: center;
+}
+.container__btn {
+    width: 100px;
+    height:50px;
+    text-align: center;
+    border:none;
+    background-color: red;
+    color:white;
+}

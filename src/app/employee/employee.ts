@@ -1,5 +1,5 @@
 export interface Employee {
-    id: number,
+    id : number | string,
     empId: string,
     name: string,
     age: number,
