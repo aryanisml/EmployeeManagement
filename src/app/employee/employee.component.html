@@ -1,16 +1,7 @@
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Navbar</a>
-    <ul>
-        <li>
-            <a [routerLink]="['/employee/add']" >
-               Add
-              </a>
-        </li>
-        <li>
-            <a [routerLink]="['/employee/']" >
-               Details
-              </a>
-        </li>
-    </ul>
+<nav class="navbar navbar-light bg-light Header">
+  <div class="header__nav">
+    <a [routerLink]="['/employee/add']"> Add </a>
+    <a [routerLink]="['/employee/']"> Details </a>
+  </div>
 </nav>
 <router-outlet></router-outlet>
