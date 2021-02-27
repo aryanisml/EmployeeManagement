@@ -15,7 +15,10 @@ const routes: Routes = [{
       loadChildren :()=>import('../app/employee/employee.module').then(m=>m.EmployeeModule)
     }
   ]
-}];
+}
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
