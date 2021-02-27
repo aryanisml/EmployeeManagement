@@ -6,10 +6,10 @@
                 <form [formGroup]="empCreateForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <label>Employee ID</label>
-                        <input type="text" formControlName="employeeId" class="form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.employeeId.errors }" />
-                        <div *ngIf="submitted && f.employeeId.errors" class="invalid-feedback">
-                            <div *ngIf="f.employeeId.errors.required">Employee ID is required</div>
+                        <input type="text" formControlName="empId" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.empId.errors }" />
+                        <div *ngIf="submitted && f.empId.errors" class="invalid-feedback">
+                            <div *ngIf="f.empId.errors.required">Employee ID is required</div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -30,11 +30,11 @@
                     </div>
                     <div class="form-group">
                         <label>Mobile Number</label>
-                        <input type="text" formControlName="mobileNo" class="form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" />
-                        <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback">
-                            <div *ngIf="f.mobileNo.errors.required">Mobile Number is required</div>
-                            <div *ngIf="f.mobileNo.errors.minlength">Mobile Number must be at least 10 characters</div>
+                        <input type="text" formControlName="phone" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.phone.errors.required">Mobile Number is required</div>
+                            <div *ngIf="f.phone.errors.minlength">Mobile Number must be at least 10 characters</div>
                         </div>
                     </div>
                     <div class="form-group">

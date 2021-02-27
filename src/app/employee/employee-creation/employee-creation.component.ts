@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-employee-creation',
   templateUrl: './employee-creation.component.html',
@@ -14,10 +15,10 @@ export class EmployeeCreationComponent implements OnInit {
     private router: Router) { }
   ngOnInit() {
     this.empCreateForm = this.formBuilder.group({
-      employeeId: ['', Validators.required],
+      empId: ['', Validators.required],
       name: ['', Validators.required],
       age: ['', Validators.required],
-      mobileNo: ['', [Validators.required, Validators.minLength(10)]],
+      phone: ['', [Validators.required, Validators.minLength(10)]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required]
 
@@ -33,6 +34,7 @@ export class EmployeeCreationComponent implements OnInit {
       return;
     }
     this.employeeService.addEmployee(this.empCreateForm.value);
+    
     this.router.navigate(["employee"]);
   }
 
