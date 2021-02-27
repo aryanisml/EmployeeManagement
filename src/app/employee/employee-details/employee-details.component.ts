@@ -8,6 +8,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./employee-details.component.scss'],
 })
 export class EmployeeDetailsComponent implements OnInit {
+  // columnDefs = [{ field: "make" }, { field: "model" }, { field: "price" }];
+
+  // rowData = [
+  //   { make: "Toyota", model: "Celica", price: 35000 },
+  //   { make: "Ford", model: "Mondeo", price: 32000 },
+  //   { make: "Porsche", model: "Boxter", price: 72000 }
+  // ];
   constructor(private _empService: EmployeeServiceService) {
     this.getEmployees();
   }
@@ -18,16 +25,16 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   columnDefs = [
-    { employeeId: 'empId', sortable: true, filter: true },
-    { name: 'name', sortable: true, filter: true },
-    { age: 'age', sortable: true, filter: true },
-    { mobileNo: 'phone', sortable: true, filter: true },
-    { email: 'email', sortable: true, filter: true },
-    { address: 'address', sortable: true, filter: true },
+    {  field: 'employeeId', sortable: true, filter: true },
+    {  field: 'name', sortable: true, filter: true },
+    {  field: 'name', sortable: true, filter: true },
+    {  field: 'mobileNo', sortable: true, filter: true },
+    {  field: 'mobileNo', sortable: true, filter: true },
+    {  field: 'address', sortable: true, filter: true },
   ];
   getEmployees() {
     // this.rowData$ = this._empService.getEmployees()
     // console.log('EMPDATA:', this.rowData$);
-    this._empService.getEmployees().subscribe((d) => (this.rowData = d));
+   this._empService.getEmployees().subscribe((d) => (this.rowData = d));
   }
 }
