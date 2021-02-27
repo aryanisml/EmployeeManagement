@@ -6,14 +6,14 @@ import { EmployeeCreationComponent } from './employee-creation/employee-creation
 
 const employeeRoutes: Routes = [{
     path: '/details',
-    componet: EmployeeDetailsComponent
+    component : EmployeeDetailsComponent
 }, {
     path: '',
     component: EmployeeCreationComponent
 }];
 
 @NgModule({
-    imports: [RouterModule.forchild(employeeRoutes)],
+    imports: [RouterModule.forChild(employeeRoutes)],
     exports: [RouterModule]
 })
 export class EmployeeRoutingModule { }
