@@ -1,0 +1,31 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "empId": "HCL408324",
+      "name": "suresh",
+      "age": 36,
+      "phone": 9640147969,
+      "email": "sureshkathroj@gmail.com",
+      "address": "Hyderabad"
+    },
+    {
+      "employeeId": "weq",
+      "name": "wewe",
+      "age": "23",
+      "mobileNo": "1234566782",
+      "email": "sdewee@gmail.com",
+      "address": "wsqdd",
+      "id": 2
+    },
+    {
+      "employeeId": "re665365",
+      "name": "Raju",
+      "age": "12",
+      "mobileNo": "32321323412",
+      "email": "rer4e@gamil.com",
+      "address": "2332",
+      "id": 3
+    }
+  ]
+}
