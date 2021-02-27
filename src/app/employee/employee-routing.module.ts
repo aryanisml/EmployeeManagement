@@ -11,7 +11,7 @@ const employeeRoutes: Routes = [
     component : EmployeeComponent,
     children : [
             {
-                path: '/details',
+                path: 'details',
                 component : EmployeeDetailsComponent
             }, {
                 path: '',

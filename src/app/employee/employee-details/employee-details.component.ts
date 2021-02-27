@@ -10,13 +10,22 @@ import { Observable } from 'rxjs';
 export class EmployeeDetailsComponent implements OnInit {
 
   constructor(private _empService:EmployeeServiceService) { }
-  employees$: Observable<Employee[]> | undefined;
+  rowData$: Observable<Employee[]> | undefined;
   ngOnInit(): void {
   }
 
+  columnDefs = [
+  
+    { empId: 'empId', sortable: true, filter: true },
+    { name: 'name', sortable: true, filter: true },
+    { age: 'age', sortable: true, filter: true },
+    { phone: 'phone', sortable: true, filter: true },
+    { email: 'email', sortable: true, filter: true },
+    { address: 'address', sortable: true, filter: true }
+  ];
   getEmployees () {
-    this.employees$ = this._empService.getEmployees()
-    console.log('EMPDATA:', this.employees$);
+    this.rowData$ = this._empService.getEmployees()
+    console.log('EMPDATA:', this.rowData$);
   }
 
 }

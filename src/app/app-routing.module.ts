@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [{
-  path :'',
+  path :'employee',
   component : AppComponent,
   children :  [
+    {
+      path : 'app',
+      loadChildren :()=>import('../app/employee/employee.module').then(m=>m.EmployeeModule)
+    },
     {
       path : '',
       loadChildren :()=>import('../app/employee/employee.module').then(m=>m.EmployeeModule)

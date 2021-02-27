@@ -1,4 +1,15 @@
-
-
-<router-outlet>
-</router-outlet>
+<nav>
+    <ul>
+        <li>
+            <a [routerLink]="['/employee/details']" >
+               Details
+              </a>
+        </li>
+        <li>
+            <a [routerLink]="['/employee/']" >
+               Creations
+              </a>
+        </li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>

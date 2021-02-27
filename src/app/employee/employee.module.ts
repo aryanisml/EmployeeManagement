@@ -5,6 +5,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { EmployeeCreationComponent } from './employee-creation/employee-creation.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShareModule } from '../share/share.module';
 
 
 
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ShareModule
   ]
 })
 export class EmployeeModule { }
