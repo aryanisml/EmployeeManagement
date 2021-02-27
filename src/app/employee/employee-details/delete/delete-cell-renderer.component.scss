@@ -1,12 +1,10 @@
 .container {
     display:flex;
     align-items: center;
+    outline: none;
 }
-.container__btn {
-    width: 100px;
-    height:50px;
-    text-align: center;
-    border:none;
-    background-color: red;
-    color:white;
+.container__delete {
+  color:red;
+  cursor: pointer;
+  outline: none;
 }

@@ -13,7 +13,10 @@ export class EmployeeDetailsService {
       { field: 'age', sortable: true, filter: true },
       { field: 'mobileNo', sortable: true, filter: true },
       { field: 'address', sortable: true, filter: true },
-      { field: 'delete', sortable: true, filter: true},
+      {
+        field: 'delete',
+        cellRenderer: 'deleteCellRenderer',
+      },
     ];
   }
 }

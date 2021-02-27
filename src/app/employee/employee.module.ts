@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../share/shared.module';
 import { AgGridModule } from 'ag-grid-angular';
 import { DeleteCellRendererComponent } from './employee-details/delete/delete-cell-renderer.component';
+import { CommonMaterialModule } from '../common-material.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DeleteCellRendererComponent } from './employee-details/delete/delete-ce
     EmployeeRoutingModule,
     SharedModule,
     AgGridModule.withComponents([DeleteCellRendererComponent]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonMaterialModule
  
   ],
 })

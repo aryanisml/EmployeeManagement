@@ -4,21 +4,24 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { EmployeeDetailsService } from './employee-details.service';
 import { EmployeeService } from '../employee.service';
+import { DeleteCellRendererComponent } from './delete/delete-cell-renderer.component';
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
   styleUrls: ['./employee-details.component.scss'],
 })
 export class EmployeeDetailsComponent implements OnInit {
+  private destroy$: Subject<boolean> = new Subject<boolean>();
   rowData: Employee[] = [];
   columnDefs: any;
-  private destroy$: Subject<boolean> = new Subject<boolean>();
+  frameworkComponents: any;
 
   constructor(
     private _empService: EmployeeService,
     private _empDetailsService: EmployeeDetailsService
   ) {
     this.createColDef();
+    this.frameworkComponents = this.getFrameworkComponents();
   }
 
   ngOnInit(): void {
@@ -41,5 +44,11 @@ export class EmployeeDetailsComponent implements OnInit {
   }
   createColDef() {
     this.columnDefs = this._empDetailsService.getColDef();
+  }
+
+  getFrameworkComponents (){
+    return {
+      deleteCellRenderer : DeleteCellRendererComponent
+    }
   }
 }
