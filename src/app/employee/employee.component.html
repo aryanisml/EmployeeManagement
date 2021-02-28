@@ -3,5 +3,6 @@
     <a [routerLink]="['/employee/add']"> Add </a>
     <a [routerLink]="['/employee/']"> Details </a>
   </div>
+  <span>{{employeeCount$ | async}}</span>
 </nav>
 <router-outlet></router-outlet>
