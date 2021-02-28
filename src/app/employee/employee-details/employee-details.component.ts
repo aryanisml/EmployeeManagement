@@ -1,40 +1,54 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeServiceService } from '../employee-service.service';
 import { Employee } from '../employee';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { EmployeeDetailsService } from './employee-details.service';
+import { EmployeeService } from '../employee.service';
+import { DeleteCellRendererComponent } from './delete/delete-cell-renderer.component';
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
   styleUrls: ['./employee-details.component.scss'],
 })
 export class EmployeeDetailsComponent implements OnInit {
-  // columnDefs = [{ field: "make" }, { field: "model" }, { field: "price" }];
+  private destroy$: Subject<boolean> = new Subject<boolean>();
+  rowData: Employee[] = [];
+  columnDefs: any;
+  frameworkComponents: any;
 
-  // rowData = [
-  //   { make: "Toyota", model: "Celica", price: 35000 },
-  //   { make: "Ford", model: "Mondeo", price: 32000 },
-  //   { make: "Porsche", model: "Boxter", price: 72000 }
-  // ];
-  constructor(private _empService: EmployeeServiceService) {
-    this.getEmployees();
+  constructor(
+    private _empService: EmployeeService,
+    private _empDetailsService: EmployeeDetailsService
+  ) {
+    this.createColDef();
+    this.frameworkComponents = this.getFrameworkComponents();
   }
-  // rowData$: Observable<Employee[]> | undefined;
-  rowData: any;
+
   ngOnInit(): void {
-    
+    this.fetchEmployeeInformation();
   }
 
-  columnDefs = [
-    {  field: 'empId', sortable: true, filter: true },
-    {  field: 'name', sortable: true, filter: true },
-    {  field: 'age', sortable: true, filter: true },
-    {  field: 'phone', sortable: true, filter: true },
-    {  field: 'email', sortable: true, filter: true },
-    {  field: 'address', sortable: true, filter: true },
-  ];
-  getEmployees() {
-    // this.rowData$ = this._empService.getEmployees()
-    // console.log('EMPDATA:', this.rowData$);
-   this._empService.getEmployees().subscribe((d) => (this.rowData = d));
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.complete();
+  }
+
+  fetchEmployeeInformation() {
+    this._empService
+      .getEmployees()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((empData) => {
+        console.log(empData);
+        this.rowData = empData;
+      });
+  }
+  createColDef() {
+    this.columnDefs = this._empDetailsService.getColDef();
+  }
+
+  getFrameworkComponents (){
+    return {
+      deleteCellRenderer : DeleteCellRendererComponent
+    }
   }
 }

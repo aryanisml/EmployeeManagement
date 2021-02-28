@@ -17,7 +17,6 @@ const employeeRoutes: Routes = [
                 path: 'add',
                 component: EmployeeCreationComponent
             },
-        
     ]
 
 }
