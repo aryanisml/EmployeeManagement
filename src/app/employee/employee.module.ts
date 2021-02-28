@@ -4,7 +4,6 @@ import { EmployeeComponent } from '../employee/employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeCreationComponent } from './employee-creation/employee-creation.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ShareModule } from '../share/share.module';
 import {AgGridModule} from 'ag-grid-angular';
 
@@ -15,9 +14,7 @@ import {AgGridModule} from 'ag-grid-angular';
     CommonModule,
     EmployeeRoutingModule,
     ShareModule,
-    AgGridModule.withComponents([]),
-    ReactiveFormsModule,
-    ShareModule
+    AgGridModule.withComponents([])
   ]
 })
 export class EmployeeModule { }
